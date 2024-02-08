@@ -2,11 +2,9 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const Dotenv = require('dotenv-webpack');
 const deps = require("./package.json").dependencies;
-
-
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:8001/",
+    publicPath: "http://localhost:8003/",
   },
 
   resolve: {
@@ -14,7 +12,7 @@ module.exports = (_, argv) => ({
   },
 
   devServer: {
-    port: 8001,
+    port: 8003,
     historyApiFallback: true,
   },
 
@@ -43,13 +41,12 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "container",
+      name: "Dahsboard",
       filename: "remoteEntry.js",
-      remotes: {
-        MFE1: 'MFE1@http://localhost:8002/remoteEntry.js',
-        Dashboard: 'Dashboard@http://localhost:8003/remoteEntry.js'
+      remotes: {},
+      exposes: {
+        './Dashboard' : './src/App.jsx'
       },
-      exposes: {},
       shared: {
         ...deps,
         react: {

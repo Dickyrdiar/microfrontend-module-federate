@@ -1,7 +1,9 @@
-const Button = () => {
+const Button = ({
+  onClick
+}) => {
   return (
     <div className="relative">
-      <button onClick={() => console.log('click')}>
+      <button onClick={onClick}>
         this is click
       </button>
     </div>
