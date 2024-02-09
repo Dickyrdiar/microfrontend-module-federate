@@ -1,11 +1,16 @@
 import Button from "./Components/Button"
 import { Typography, Input } from "@material-tailwind/react"
+import AuthController from "./controller/AuthController"
 
 const App = () => {
 
-  const handleClick = () => {
-    console.log('click')
-  }
+  const {
+    username, 
+    password, 
+    setPassword, 
+    setUsername, 
+    handleClickLogin} 
+  = AuthController()
 
   return (
     <div className="w-full">
@@ -20,7 +25,10 @@ const App = () => {
             username
           </Typography>
 
-          <Input type="text"/>
+          <Input 
+            type="text" 
+            value={username} 
+            onChange={(e) => setUsername(e.target.value)}/>
         </div>
 
         <div>
@@ -28,13 +36,17 @@ const App = () => {
             Password
           </Typography>
 
-          <Input type="password" />
+          <Input
+           type="password" 
+           value={password}
+           onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
        </div>
 
         {""}
         <Button
-          onClick={handleClick}
+          onClick={handleClickLogin}
         />
       </div>
     </div>

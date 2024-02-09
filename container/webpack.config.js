@@ -47,7 +47,7 @@ module.exports = (_, argv) => ({
       filename: "remoteEntry.js",
       remotes: {
         MFE1: 'MFE1@http://localhost:8002/remoteEntry.js',
-        Dashboard: 'Dashboard@http://localhost:8003/remoteEntry.js'
+        Dahsboard: 'Dahsboard@http://localhost:8003/remoteEntry.js'
       },
       exposes: {},
       shared: {
