@@ -1,6 +1,7 @@
 import Button from "./Components/Button"
 import { Typography, Input } from "@material-tailwind/react"
 import AuthController from "./controller/AuthController"
+import { Link } from "react-router-dom"
 
 const App = () => {
 
@@ -9,7 +10,9 @@ const App = () => {
     password, 
     setPassword, 
     setUsername, 
-    handleClickLogin} 
+    handleClickLogin,
+    location
+  } 
   = AuthController()
 
   return (
@@ -45,9 +48,12 @@ const App = () => {
        </div>
 
         {""}
+      {location.pathname === "/" && (
         <Button
-          onClick={handleClickLogin}
+          as={Link}
+          to="/dahsboard"
         />
+      )}
       </div>
     </div>
   )
