@@ -1,6 +1,7 @@
 import React from "react"
 import { Route, BrowserRouter, Routes} from "react-router-dom"
 import Auth from "./container/Auth"
+import SidebarMenu from "./container/sidebarMenu"
 
 const MFE1_Screen = React.lazy(() => import('MFE1/ComponentScreen'))
 const HOME_Screen = React.lazy(() => import('Dahsboard/HomePage'))
@@ -13,7 +14,8 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Auth/>}/>
-        <Route path="/dahsboard" element={<HOME_Screen/>}/>
+        <Route path="/dashboard" element={<SidebarMenu/>}/>
+        <Route path="/feature1" element={<HOME_Screen/>}/>
       </Routes>
     </BrowserRouter>
   )

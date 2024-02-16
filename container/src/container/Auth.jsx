@@ -12,45 +12,53 @@ const Auth = () => {
   } = AuthController()
 
   return (
-    <div className="w-full">
-    <div className="flex items-center justify-center h-screen">
-      <Typography variant="h5">
-        this is mfe1
-      </Typography>
+    // <div className="w-full">
+    //   <div className="flex items-center justify-center h-screen">
+    //     <div>
+    //       <div>
+    //         <Typography>
+    //           username
+    //         </Typography>
 
-     <div className="flex justify-around">
-      <div>
-        <Typography>
-          username
-        </Typography>
+    //         <Input 
+    //           type="text" 
+    //           value={username} 
+    //           onChange={(e) => setUsername(e.target.value)}/>
+    //       </div>
 
-        <Input 
-          type="text" 
-          value={username} 
-          onChange={(e) => setUsername(e.target.value)}/>
+    //       <div>
+    //         <Typography>
+    //           Password
+    //         </Typography>
+
+    //         <Input
+    //         type="password" 
+    //         value={password}
+    //         onChange={(e) => setPassword(e.target.value)}
+    //         />
+    //       </div>
+
+    //       <div className="mt-4">
+    //         {""}
+    //         {location.pathname === "/" && (
+    //           <Button
+    //             onClick={handleClickLogin}
+    //           />
+    //         )}
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+
+    <div className="w-full h-screen flex flex-row justify-between">
+      <div className="w-[3px] bg-green-200 p-4">
+        this is form
       </div>
 
-      <div>
-        <Typography>
-          Password
-        </Typography>
-
-        <Input
-         type="password" 
-         value={password}
-         onChange={(e) => setPassword(e.target.value)}
-        />
+      <div className="w-[20%] p-4">
+        this is image
       </div>
-     </div>
-
-      {""}
-    {location.pathname === "/" && (
-      <Button
-        onClick={handleClickLogin}
-      />
-    )}
     </div>
-  </div>
   )
 }
 

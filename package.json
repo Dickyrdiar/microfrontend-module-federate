@@ -4,7 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "sass-loader": "^14.1.0"
+  },
   "devDependencies": {
     "lerna": "^8.0.1"
   }
