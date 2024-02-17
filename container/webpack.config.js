@@ -28,8 +28,22 @@ module.exports = (_, argv) => ({
         },
       },
       {
-        test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  require("tailwindcss"),
+                  require("autoprefixer"),
+                ],
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
@@ -60,11 +74,9 @@ module.exports = (_, argv) => ({
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
-        // "react-router-dom" : {
-        //   singleton: true,
-        //   eager: true,
-        //   requiredVersion: deps['react-router-dom']
-        // }
+        "@material-tailwind/react": {
+          singleton: true, // Ensure single instance
+        },
       },
     }),
     new HtmlWebPackPlugin({
