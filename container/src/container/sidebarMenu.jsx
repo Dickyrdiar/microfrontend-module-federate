@@ -1,11 +1,16 @@
 import { Typography } from "@material-tailwind/react"
+import {SidebarWithLogo } from "../components/Sidebbar"
+import { ComplexNavbar, NavbarSimple } from "../components/Navbar"
 
 const SidebarMenu = () => {
   return (
-    <div className="relative">
-      <Typography>
-        this is sidebar
-      </Typography>
+    // <SidebarWithLogo/>
+    <div className="flex h-screen">
+      <div className="w-64 bg-gray-100 border-r">
+        <SidebarWithLogo/>
+      </div>
+
+      <NavbarSimple/>
     </div>
   )
 }
