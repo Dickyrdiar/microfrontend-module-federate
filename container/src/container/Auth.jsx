@@ -1,57 +1,18 @@
 import AuthController from "../controller/AuthController"
 import { Typography, Input, Card } from "@material-tailwind/react"
-import Button from "../components/Button"
-// import bg from "../assets/img/bg-sign-in.avif"
 import EmailInput from "../components/EmailInput"
+import ButtonLogin from "../components/Button"
 
 const Auth = () => {
   const {
-    setUsername,
+    setEmail,
     setPassword,
     password,
-    username,
+    Email,
     handleClickLogin
   } = AuthController()
 
   return (
-    // <div className="w-full">
-    //   <div className="flex items-center justify-center h-screen">
-    //     <div>
-    //       <div>
-    //         <Typography>
-    //           username
-    //         </Typography>
-
-    //         <Input 
-    //           type="text" 
-    //           value={username} 
-    //           onChange={(e) => setUsername(e.target.value)}/>
-    //       </div>
-
-    //       <div>
-    //         <Typography>
-    //           Password
-    //         </Typography>
-
-    //         <Input
-    //         type="password" 
-    //         value={password}
-    //         onChange={(e) => setPassword(e.target.value)}
-    //         />
-    //       </div>
-
-    //       <div className="mt-4">
-    //         {""}
-    //         {location.pathname === "/" && (
-    //           <Button
-    //             onClick={handleClickLogin}
-    //           />
-    //         )}
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-
     <div className="flex flex-col md:flex-row h-screen">
       <div className="w-full bg-white md:p-10 p-4 flex flex-col justify-between">
         <div className="flex justify-center items-center md:min-h-[700px] min-h-[500px]">
@@ -73,7 +34,7 @@ const Auth = () => {
             </div>
 
             <div className="mt-[-5] w-[10px] p-6">
-              <EmailInput email={username} setEmail={setUsername}/>
+              <EmailInput email={Email} setEmail={setEmail}/>
             </div>
 
             <div className="mb-sm p-6">
@@ -92,6 +53,12 @@ const Auth = () => {
               />
             </div>
 
+            <div className="mt-[-5] p-6 w-full">
+              <ButtonLogin 
+                onClick={handleClickLogin}
+                className="w-full mt-[-12px]"
+              />
+            </div>
           </Card>
         </div>
       </div>

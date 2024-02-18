@@ -3,26 +3,26 @@ import { useNavigate } from "react-router-dom"
 // import { useLocation } from 'react-router-dom'
 
 const AuthController = () => {
-  const [username, setUsername] = useState("")
+  const [Email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const history = useNavigate()
   const [disabled, setDisabled] = useState(false)
 
   const handleClickLogin = () => {
-    if (username !== "") {
+    if (Email !== "") {
       localStorage.setItem("password", JSON.stringify(password))
-      history("/dahsboard")
+      history("/dashboard")
     } else {
       setDisabled(true)
     }
   }
 
   return {
-    username, 
+    Email, 
     password, 
     handleClickLogin, 
     setPassword,
-    setUsername,
+    setEmail,
     location,
     disabled
   }
