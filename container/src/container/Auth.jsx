@@ -63,7 +63,7 @@ const Auth = () => {
         </div>
       </div>
 
-      <div
+      {/* <div
         className="w-[476px] max-w-[476px] min-h-[850px] h-auto bg-cover bg-no-repeat bg-center hidden lg:flex shadow-none"
         style={{
           background: `linear-gradient(152deg, #FCA631 3.24%, #F5BE01 39.52%, #FFDD69 88.67%)`,
@@ -81,7 +81,7 @@ const Auth = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
