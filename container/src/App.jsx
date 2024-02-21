@@ -15,7 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Auth/>}/>
         <Route path="/dashboard" element={<SidebarMenu/>}/>
-        <Route path="/feature1" element={<HOME_Screen/>}/>
+        <Route path="/feature1" element={<MFE1_Screen/>}/>
       </Routes>
     </BrowserRouter>
   )

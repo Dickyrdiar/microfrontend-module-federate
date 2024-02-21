@@ -6,10 +6,10 @@ const SidebarMenu = () => {
   return (
     // <SidebarWithLogo/>
     <div className="flex h-screen">
-      <div className="w-64 bg-gray-100 border-r">
+      <div className="w-60 bg-gray-100 border-r">
         <SidebarWithLogo/>
       </div>
-
+      
       <NavbarSimple/>
     </div>
   )
