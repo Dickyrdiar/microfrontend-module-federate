@@ -1,16 +1,18 @@
 import { Typography } from "@material-tailwind/react"
 import {SidebarWithLogo } from "../components/Sidebbar"
-import { ComplexNavbar, NavbarSimple } from "../components/Navbar"
+import NavbarSticky, { ComplexNavbar, NavbarSimple } from "../components/Navbar"
 
 const SidebarMenu = () => {
   return (
     // <SidebarWithLogo/>
-    <div className="flex h-screen">
+    <div className="flex min-h-screen overflow-hidden relative">
       <div className="w-60 bg-gray-100 border-r">
         <SidebarWithLogo/>
       </div>
-      
-      <NavbarSimple/>
+
+      <div className="flex flex-col flex-1 overflow-hidden">
+        <NavbarSticky/>
+      </div>
     </div>
   )
 }
