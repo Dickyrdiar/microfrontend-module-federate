@@ -11,7 +11,7 @@ const AuthController = () => {
   const handleClickLogin = () => {
     if (Email !== "") {
       localStorage.setItem("password", JSON.stringify(password))
-      history("/dashboard")
+      history("/dahsboard")
     } else {
       setDisabled(true)
     }
