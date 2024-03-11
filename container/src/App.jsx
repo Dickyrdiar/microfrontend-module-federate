@@ -1,5 +1,5 @@
 import React from "react"
-import { Route, BrowserRouter, Routes} from "react-router-dom"
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Auth from "./container/Auth"
 import SidebarMenu from "./container/sidebarMenu"
 

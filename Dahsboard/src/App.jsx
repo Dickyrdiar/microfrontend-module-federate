@@ -1,12 +1,16 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SidebarMenu from "../../container/src/container/sidebarMenu";
+import Wrapper from "./global/Wrapper";
+import Dashboard from "./container/Dashboard";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/dahsboard" element={<SidebarMenu/>}/>
+        <Route element={<Wrapper/>}>
+          <Route path="/dahsboard" element={<Dashboard/>}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   )
