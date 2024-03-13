@@ -9,7 +9,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<Wrapper/>}>
-          <Route path="/dahsboard" element={<Dashboard/>}/>
+          <Route path="/" index element={<Dashboard/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

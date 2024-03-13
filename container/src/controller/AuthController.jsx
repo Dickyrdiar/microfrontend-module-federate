@@ -13,12 +13,13 @@ const AuthController = () => {
     startTransition(() => {
       setLoading(true)
 
-      if (Email !== "") {
+      if (Email && password) {
         localStorage.setItem("password", JSON.stringify(password))
         history("/dahsboard")
       } else {
         setDisabled(true)
       }
+      setLoading(false)
     })
   }
 

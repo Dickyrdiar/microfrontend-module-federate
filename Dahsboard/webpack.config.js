@@ -2,9 +2,11 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const Dotenv = require('dotenv-webpack');
 const deps = require("./package.json").dependencies;
+const path = require('path')
+
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:8003/",
+    publicPath: "http://localhost:8003/"
   },
 
   resolve: {
@@ -12,8 +14,12 @@ module.exports = (_, argv) => ({
   },
 
   devServer: {
+    static: {
+      directory: path.join(__dirname, "public")
+    },
     port: 8003,
-    historyApiFallback: true,
+    open: true,
+    hot: true
   },
 
   module: {
